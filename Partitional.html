@@ -30,18 +30,68 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner", style="text-align:center">
+				<!-- overview -->
+					<section id="overview" class="wrapper">
+						<div class="inner", style="text-align:left">
 							<h1 class="major">Partitional Clustering Algorithms</h1>
 							<a href="https://github.com/jazzamazza/CHSEG/tree/jemma" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a>
 							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</section>
+							<h2><strong>OVERVIEW</strong></h2>
+							<p>The goal of clustering is to find a structure in a collection of unlabelled data. In this case, it is used to separate the noise from the CH model by 
+								forming semantically meaningful groupings that contain points with similarities called clusters. Ideally, these clusters will correspond to a 
+								collection of points that make sense to humans, such as all the points that comprise the scaffolding in the three-dimensional church model. 
+								Therefore, the taxing task of point cloud cleaning can be significantly simplified if the aforementioned is achieved. The clustering techniques explored 
+								are partitional algorithms and a Gaussian mixture model. K-means is the baseline clustering algorithm in which the three aforementioned algorithms can be compared. 
+								
+							<p>
+							<p>Partitional algorithms assign a centroid to each group and then iteratively allocate the closest points to that centroid to form a cluster. 
+							<br> A Gaussian mixture model is a soft clustering algorithm that assigns various probabilities to points,
+								making the algorithm more flexible. Every component (Gaussian density) has its own mean, as well as covariance. Clusters are formed due to different Gaussian distributions.</p>
+							
+							<h3><strong>Research Objectives</strong></h3>
+						<ol>	
+							<li> Does K-medians Gaussian mixture model and Fuzzy c-means produce clusters on point clouds of CH sites that are more semantically meaningful than those produced by k-means algorithm, using cluster validity metrics of Silhouette Coefficient and DB Index?</li>
+							<li> What is the upper bound accuracy when using the resulting clusters to perform binary classification using' keep' and' discard' labels on a point cloud?</li>
+							<li> Can clustering simplify and accelerate the mainly-manual point cloud cleaning task?</li>
+						</ol>
+							<hr>
+						<!-- </div> -->
+					<!-- </section> -->
 
-			</div>
+					
+				<!-- implementation -->
+					<!-- <section id="overview" class="wrapper">
+						<div class="inner", style="text-align:left"> -->
+				
+							
+						<h2><strong>IMPLEMENTATION</strong></h2>
+							<P> <strong> The design of our approach is split into a five step pipeline: </strong> </p>
+									<a href="#" class="image"><img src="images/pic09.PNG"  width="800" 
+										height="100" alt="" data-position="top center" /></a>
+						<ol> <li>The dataset used throughout the project is 3D point clouds from TLS campaigns conducted by the VCG at CNR-ISTI.
+								The recordings from the TLS scans are used as input in our pre-processing pipeline. </li> 
+								
+							<li>We implement feature extraction on the raw point cloud to form two rich datasets. </li> <br>	
+						<ul>
+							<li> <em><strong>Raw dataset:</strong></em> (x,y,z) , intensity </li>
+							<li> <em><strong>CloudCompare dataset:</em></strong> (x,y,z), intensity, 18 human interpretable features</li>
+							<li> <em><strong>PointNet++ dataset:</strong></em> (x,y,z), 128 abstract features </li> 
+						</ul>
+							<li> Clustering is then perfomed on the 3 datasets to decompose the 3D point cloud into different segments.</li>
+							<li> Visual inspection is implemented using a point cloud processing tool kit. </li>
+							<li> We then analyse and evaluate the prodcued clusters numerically through Cluster validity metrics (silhouette score, BIC criterion and DB index) and classification
+								performance metrics (F1 score, recall, precision and Intersection over Union metric). </li>
+						</ol>
+						
+						
+						<h2><strong> RESULTS </strong></h2>
+						
+						</div>
+					</div>
+
+
+					</section> 
+
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
