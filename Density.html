@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="CHSEG_website.html" class="icon solid major fa-home"></a>
+				<a href="index.html" class="icon solid major fa-home"></a>
 				<nav>
 					<ul>
 						<li><a href="Overview.html">Overview</a></li>
@@ -35,16 +35,26 @@
 						<div class="inner", style="text-align:center">
 							<h1 class="major">Density-Based Clustering Algorithms</h1>
 							<a href="https://github.com/jazzamazza/CHSEG/tree/Leah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<p>Density-based clustering algorithms identify clusters as maximal sets of density-connected points in space. They can identify arbitrarily shaped clusters and effectively discover noise. Unlike partitional clustering algorithms, density-based methods require no prior information about the number of clusters. These factors make density-based algorithms a more desirable solution to the problem of point cloud classification than hierarchical and partitional clustering algorithms.</p>
+							
+							<span class="image fit"><img src="images\db_ms_results.PNG" alt="" /></span>
+							<p>We implement three density-based clustering algorithms: DBSCAN, OPTICS and Mean-Shift. The mean-shift clustering algorithm performs optimally out of	the density-based clustering algorithms in all three datasets regarding	cluster validity and classification evaluation metrics. In addition, it produces clusters on the raw dataset and dataset with geometric features that are more semantically meaningful than those produced by the baseline k-means algorithm. DBSCAN and OPTICS cannot accurately classify the entire point cloud into keep and discard. They are suboptimal and perform worse than the partitional k-means algorithm in classification and clustering evaluation metrics. However, they can still produce clusters that can classify using binary classification labels.</p>
+						</div>
+					</section>
+				
+					<!-- Main -->
+					<section id="main" class="wrapper style3 fullscreen fade-up">
+						<div class="inner", style="text-align:center">
+							<p>The density-based algorithms do not produce more semantically meaningful clusters than those produced by the baseline k-means algorithms based on the SC and DB index. K-means achieves the optimal SC and DB index across all three datasets. However, the SC and DB index metrics are unsuitable cluster validity metrics for evaluating density-based clustering algorithms. These metrics are distance-based and, thus, perform well on partitional algorithms, like k-means, but do not methods. Visual inspection and classification evaluation metrics prove more suitable for evaluating the clustering and classification results of the algorithms.</p>
+							<span class="image fit"><img src="images\db_raw_results.PNG" alt="" /></span>
+							<p>Density-based clustering algorithms can partition point clouds into clusters that can be grouped into semantically meaningful clusters and classified as keep and discard. However, these algorithms produce an excessive number of partitions which is less desirable for the classification task than having one for each class label. A human operator must manually select and remove each discard cluster, which is inefficient.</p>
 						</div>
 					</section>
 
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
+			<footer id="footer" class="wrapper style1 fade-up">
 				<div class="inner">
 					<ul class="menu">
 						<li>&copy; University of Cape Town. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
