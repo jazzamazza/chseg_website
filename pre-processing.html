@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Pre-Processing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="icon solid major fa-home"></a>
+				<nav>
+					<ul>
+						<li><a href="Overview.html">Overview</a></li>
+						<li><a href="Partitional.html">Partitional</a></li>
+						<li><a href="Density.html">Density-Based</a></li>
+						<li><a href="Hierarchical.html">Hierarchical-Based</a></li>
+						<li><a href="Results.html">Results</a></li>
+					</ul>
+				</nav>
+			</header>
+    
+            <!-- Wrapper -->
+			<div id="wrapper">
+                <section id="overview" class="wrapper">
+                    <div class="inner", style="text-align:left">
+
+                        <h1><strong>IMPLEMENTATION</strong></h1>
+							<P> <strong> The design of our approach is split into a five step pipeline: </strong> </p>
+									<a href="#" class="image"><img src="images/pic09.PNG"  width="800" 
+										height="100" alt="" data-position="top center" /></a>
+						<ol> <li>The dataset used throughout the project is 3D point clouds from TLS campaigns conducted by the VCG at CNR-ISTI.
+								The recordings from the TLS scans are used as input in our pre-processing pipeline. </li> 
+								
+							<li>Features are a vital input for the clustering stage. 
+                                A baseline and two rich feature sets form the input of our clustering algorithms. </li> <br>
+                                
+                                
+
+                                
+						<ul>
+							<li> <em><strong>Raw dataset:</strong>  We will use basic point feature (x, y, z) coordinates as the only feature in our feature set. This requires no feature extraction, only raw point clouds. <br>
+                                
+                            The format is: </em> (x,y,z) , intensity </li>
+							<li> <em><strong>CloudCompare dataset:</em></strong> We use CloudCompare to extract several useful human-interpretable features. 
+                                We decided on the number and set of useful features by following the point cloud classification strategy of Marais et al.
+                                <br> 
+                                The format is: (x,y,z), intensity, 18 human interpretable features</li>
+							<li> <em><strong>PointNet++ dataset:</strong></em> We use PointNet++ to generate a dataset with many human-incomprehensible features. PointNet++ utilises PointNet in sampled local regions 
+                                and aggregates features using a hierarchical deep learning algorithm. It builds dynamic connections among points in their feature level and updates point features based on their neighbouring points in the feature space. 
+                                <br> The format is: (x,y,z), 128 abstract features </li> 
+						</ul>
+							<li> Clustering partitions a dataset into homogenous subgroups called clusters, such that each comprises similar points. Clustering is perfomed on the 3 datasets to decompose the 3D point cloud.</li>
+							<li> The fourth step of the pipeline is visualisation, which includes visualising point clouds and their attributes. Visualisation is implemented using a point cloud processing tool kit. </li>
+							<li> We use multiple evaluation metrics to determine the success or failure of our clustering algorithms. We first test the clustering results using cluster validity metrics and then evaluate those clusters using classification performance metrics. </li>
+						</ol>
+						
+						
+				
+						
+						</div>
+					</div>
+
+
+				</section> 
+
+
+
+

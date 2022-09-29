@@ -20,9 +20,11 @@
 				<nav>
 					<ul>
 						<li><a href="Overview.html">Overview</a></li>
+						<li><a href="pre-processing.html">Implementation</a></li>
 						<li><a href="Density.html">Density-Based</a></li>
 						<li><a href="Hierarchical.html">Hierarchical-Based</a></li>
 						<li><a href="Results.html">Results</a></li>
+					
 					</ul>
 				</nav>
 			</header>
@@ -32,11 +34,15 @@
 
 				<!-- overview -->
 					<section id="overview" class="wrapper">
-						<div class="inner", style="text-align:left">
+						<div class="inner", style="text-align:center">
 							<h1 class="major">Partitional Clustering Algorithms</h1>
 							<a href="https://github.com/jazzamazza/CHSEG/tree/jemma" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h2><strong>OVERVIEW</strong></h2>
+							
+							<p>Partitional algorithms assign a centroid to each group and then iteratively allocate the closest points to that centroid to form a cluster. 
+								<br> A Gaussian mixture model is a soft clustering algorithm that assigns various probabilities to points,
+									making the algorithm more flexible. Clusters are formed due to different Gaussian distributions.
+								Partitional algorithms and the Gaussian mixture model require the user to specify 'k', the input amount of clusters.</p>
+								
 							<p>The goal of clustering is to find a structure in a collection of unlabelled data. In this case, it is used to separate the noise from the CH model by 
 								forming semantically meaningful groupings that contain points with similarities called clusters. Ideally, these clusters will correspond to a 
 								collection of points that make sense to humans, such as all the points that comprise the scaffolding in the three-dimensional church model. 
@@ -44,9 +50,6 @@
 								are partitional algorithms and a Gaussian mixture model. K-means is the baseline clustering algorithm in which the three aforementioned algorithms can be compared. 
 								
 							<p>
-							<p>Partitional algorithms assign a centroid to each group and then iteratively allocate the closest points to that centroid to form a cluster. 
-							<br> A Gaussian mixture model is a soft clustering algorithm that assigns various probabilities to points,
-								making the algorithm more flexible. Every component (Gaussian density) has its own mean, as well as covariance. Clusters are formed due to different Gaussian distributions.</p>
 							
 							<h3><strong>Research Objectives</strong></h3>
 						<ol>	
@@ -55,8 +58,41 @@
 							<li> Can clustering simplify and accelerate the mainly-manual point cloud cleaning task?</li>
 						</ol>
 							<hr>
+					</section>
 						<!-- </div> -->
 					<!-- </section> -->
+					<section id="main" class="wrapper style3 fullscreen fade-up">
+						<div class="inner", style="text-align:CENTER">
+							<h1>RESULTS  </h1>
+							<h2> Clustering </h2>
+							<a href="#" class="image"><img src="images/pic12.PNG"  width="1200" 
+								height="500" alt="" data-position="top center" /></a>
+							
+							<p> K-means, K-medians, FCM and GMM can form semantically meaningful clusters on the raw dataset and the PointNet++ dataset.
+								The algorithms fail on the CloudCompare dataset as the clusters are complex to decipher and do not correspond to specific sturctures of the CH site. No algorithm substantially outperforms any other algorithm in producing semantically meaningful clusters.
+								Additionally, the prodcued clusters can simplify and accelerate the point cloud cleaning task as the clusters corresponding to noise can be easily discarded. 
+								Even though, there is sometimes overlap with points that do not belong to the CH site and points that do, it is still more simple and effective to remove some clusters
+								and a few points instead of thousands of points.
+							</p>
+							
+							<h2> Classification </h2>
+								<a href="#" class="image"><img src="images/pic10.PNG"  width="1200" 
+									height="500" alt="" data-position="top center" /></a>
+							<p> The Gaussian mixture models maintains a strong performance in the classifcation task throughout all three datasets. 
+								It's performance is optimised when using the PointNet++ dataset. The k-means algorithm producing robust classification results
+								however it's perfromance is based off 3000 clusters. Unfortunately, vast amounts of clusters can not help the point cloud cleaning task
+								therefore we conclude that the GMM is superior.
+							</p>
+							
+							<h2> Performance Metrics </h2>
+							<a href="#" class="image"><img src="images/pic11.PNG"  width="1200" 
+								height="500" alt="" data-position="top center" /></a>
+
+						
+	
+
+						</div>
+					</section>
 
 					
 				<!-- implementation -->
@@ -64,34 +100,7 @@
 						<div class="inner", style="text-align:left"> -->
 				
 							
-						<h2><strong>IMPLEMENTATION</strong></h2>
-							<P> <strong> The design of our approach is split into a five step pipeline: </strong> </p>
-									<a href="#" class="image"><img src="images/pic09.PNG"  width="800" 
-										height="100" alt="" data-position="top center" /></a>
-						<ol> <li>The dataset used throughout the project is 3D point clouds from TLS campaigns conducted by the VCG at CNR-ISTI.
-								The recordings from the TLS scans are used as input in our pre-processing pipeline. </li> 
-								
-							<li>We implement feature extraction on the raw point cloud to form two rich datasets. </li> <br>	
-						<ul>
-							<li> <em><strong>Raw dataset:</strong></em> (x,y,z) , intensity </li>
-							<li> <em><strong>CloudCompare dataset:</em></strong> (x,y,z), intensity, 18 human interpretable features</li>
-							<li> <em><strong>PointNet++ dataset:</strong></em> (x,y,z), 128 abstract features </li> 
-						</ul>
-							<li> Clustering is then perfomed on the 3 datasets to decompose the 3D point cloud into different segments.</li>
-							<li> Visual inspection is implemented using a point cloud processing tool kit. </li>
-							<li> We then analyse and evaluate the prodcued clusters numerically through Cluster validity metrics (silhouette score, BIC criterion and DB index) and classification
-								performance metrics (F1 score, recall, precision and Intersection over Union metric). </li>
-						</ol>
-						
-						
-						<h2><strong> RESULTS </strong></h2>
-						
-						</div>
-					</div>
-
-
-					</section> 
-
+					
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1 fade-up">
