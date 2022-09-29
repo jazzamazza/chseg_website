@@ -14,6 +14,7 @@
 	</head>
 	<body class="is-preload">
 
+
 		<!-- Header -->
 			<header id="header">
 				<a href="index.html" class="icon solid major fa-home"></a>
@@ -35,14 +36,25 @@
 					<section id="main" class="wrapper">
 						<div class="inner", style="text-align:center">
 							<h1 class="major">Density-Based Clustering Algorithms</h1>
+							
 							<a href="https://github.com/jazzamazza/CHSEG/tree/Leah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a>
+							
+							<ul>
+								<li><a href="#algorithms"class="button">Algorithms</a>
+									<a href="#visualised_results" class="button">Visualised Results</a>
+									<a href="#graph_results" class="button">Graphical Results</a>
+									<a href="#conclusions" class="button">Conclusions</a>
+									<a href="#documents" class="button">Documents</a>
+								</li>
+							</ul>
+
 							<p>Density-based clustering algorithms identify clusters as maximal sets of density-connected points in space. They can identify arbitrarily shaped clusters and effectively discover noise. Unlike partitional clustering algorithms, density-based methods require no prior information about the number of clusters. These factors make density-based algorithms a more desirable solution to the problem of point cloud classification than hierarchical and partitional clustering algorithms.</p>
 							<h3><strong>Research Questions:</strong></h3>
 							<ol>	
 								<li>Do density-based clustering methods produce more semantically meaningful clusters on Cultural Hertiage site point clouds than a baseline k-means algorithm, based on the Silhouette Coefficient and Davies Bouldin index cluster validity metrics?’</li>
 								<li>What is the upper bound accuracy when using the resulting clusters to perform binary classification using 'keep' and 'discard labels' on a point cloud?’</li>
 							</ol>
-							<span class="image fit"><img src="images\db_ms_results.PNG" alt="" /></span>
+							<span class="image fit"><img src="images\Density-based\db_ms_results.PNG" alt="" /></span>
 							
 							<p>We implement three density-based clustering algorithms:</p>
 							<h3><strong>Additional Aims:</strong></h3>
@@ -54,7 +66,7 @@
 						</div>
 					</section>
 				
-					<section id="main" class="wrapper style1 fullscreen fade-up">
+					<section id="algorithms" class="wrapper style1 fullscreen fade-up">
 						<div class="inner", style="text-align:center">
 							<h2>Mean-Shift Clustering</h2>
 							<p>Mean-shift clustering iteratively assigns points in a dataset to clusters by shifting each point to the highest point density region in the space (the cluster centroid). The algorithm works in a Euclidean feature space and identifies clusters around centroids that correspond to dense areas within the feature space</p>
@@ -67,13 +79,46 @@
 						</div>
 					</section>
 
-					<section id="main" class="wrapper style3 fullscreen fade-up">
+
+					<section id="visualised_results", class="wrapper style3 fullscreen fade-up">
 						<div class="inner", style="text-align:center">
-							<h1>Results & Conclusions</h1>
-							<p>The mean-shift clustering algorithm performs optimally out of	the density-based clustering algorithms in all three datasets regarding	cluster validity and classification evaluation metrics. In addition, it produces clusters on the raw dataset and dataset with geometric features that are more semantically meaningful than those produced by the baseline k-means algorithm. DBSCAN and OPTICS cannot accurately classify the entire point cloud into keep and discard. They are suboptimal and perform worse than the partitional k-means algorithm in classification and clustering evaluation metrics. However, they can still produce clusters that can classify using binary classification labels.</p>
+							<h1>Visualised Clustering and Classification Results on each Dataset:</h1>
+							<p>Clustering result is the left image of each figure, and Classification results are the right image of each figure</p>
+							<h3>Raw Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\db_raw_results.PNG" alt="" /></span>
+
+							<h3>CloudCompare Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\db_cldCmp_results.PNG" alt="" /></span>
+
+							<h3>PointNet++ Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\db_pnet_results.PNG" alt="" /></span>
+						</div>
+					</section>
+
+					<section id="graph_results", class="wrapper style1 fullscreen fade-up">
+						<div class="inner", style="text-align:center">
+							<h1>Graphical Classification Results on each Dataset:</h1>
+							<h3>Raw Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\class_all_raw.png" alt="" /></span>
+
+							<h3>CloudCompare Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\class_all_cldCmp.png" alt="" /></span>
+
+							<h3>PointNet++ Dataset Result:</h3>
+							<span class="image fit"><img src="images\Density-based\class_all_pnet.png" alt="" /></span>
+							
+							<h3>Mean-Squared Error Result Across All 3 Datasets:</h3>
+							<span class="image fit"><img src="images\Density-based\class_all_pnet.png" alt="" /></span>
 						
+						
+						</div>
+					</section>
+
+					<section id="conclusions", class="wrapper style3 fullscreen fade-up">
+						<div class="inner", style="text-align:center">
+							<h1>Conclusions</h1>
+							<p>The mean-shift clustering algorithm performs optimally out of	the density-based clustering algorithms in all three datasets regarding	cluster validity and classification evaluation metrics. In addition, it produces clusters on the raw dataset and dataset with geometric features that are more semantically meaningful than those produced by the baseline k-means algorithm. DBSCAN and OPTICS cannot accurately classify the entire point cloud into keep and discard. They are suboptimal and perform worse than the partitional k-means algorithm in classification and clustering evaluation metrics. However, they can still produce clusters that can classify using binary classification labels.</p>
 							<p>The density-based algorithms do not produce more semantically meaningful clusters than those produced by the baseline k-means algorithms based on the SC and DB index. K-means achieves the optimal SC and DB index across all three datasets. However, the SC and DB index metrics are unsuitable cluster validity metrics for evaluating density-based clustering algorithms. These metrics are distance-based and, thus, perform well on partitional algorithms, like k-means, but do not methods. Visual inspection and classification evaluation metrics prove more suitable for evaluating the clustering and classification results of the algorithms.</p>
-							<span class="image fit"><img src="images\db_raw_results.PNG" alt="" /></span>
 							<p>Density-based clustering algorithms can partition point clouds into clusters that can be grouped into semantically meaningful clusters and classified as keep and discard. However, these algorithms produce an excessive number of partitions which is less desirable for the classification task than having one for each class label. A human operator must manually select and remove each discard cluster, which is inefficient.</p>
 						</div>
 					</section>
