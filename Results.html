@@ -35,10 +35,101 @@
 					<section id="main" class="wrapper">
 						<div class="inner", style="text-align:center">
 							<h1 class="major">Results</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<section id="objectives" class="wrapper">
+								<h2>Objectives</h2>
+								<hr>
+								<ol style="text-align:left">
+									<li>
+										Investigate whether clustering methods produce more semantically
+										meaningful clusters than k-means, through point feature clustering
+										on point clouds with varying dimensionality.
+									</li>
+									<li>
+										Determine the upper bound accuracy when using clusters to perform 
+										binary classification on point clouds.
+									</li>
+									<li>
+										Simplify and accelerate point cloud cleaning.
+									</li>
+								</ol>
+							</section>
+							<section id="summary">
+								<h2>Summary of Results</h2>
+								<hr>
+								<p>
+									We explore the objectives through different classes of clustering algorithms and compare against k-means
+								</p>
+								<div class="row">
+									<div class="col-4">
+										<h2>Partitional+GMM Based</h2>
+										<p> <h3>Algorithms Implemented:</h3>
+											GMM, K-medians and Fuzzy c-means clustering.
+											<br> <br>
+											<h3>Key Results:</h3>
+											GMM maintains a strong performance in the clustering and
+											classification task. throughout all
+											three datasets.
+											GMM produces a small amount of
+											clusters that can simplify and
+											accelerate the cleaning task.
+											The performance of all the
+											algorithms is optimal when
+											utilising the PointNet++ dataset.
+											Encoding additional features into
+											the dataset is valuable.</p>
+										<div class="image fit">
+											<img src="images/partitionalgmmsummary.png" alt="partitional/gmm summary">
+										</div>
+									</div>
+									<div class="col-4">
+										<h2>Hierarchical Based</h2>
+										<p><h3>Algorithms Implemented:</h3>
+											Agglomerative, BIRCH, and CURE clustering.
+											<br> <br>
+											<h3>Key Results:</h3>
+											All algorithms match or exceed Kmeans in many clustering and
+											classification metrics.
+											CURE and Agglomerative show the
+											most promising results.
+											High time and space complexity.
+											Algorithms perform well with low
+											dimensionalities and down sampled
+											data. This reduces the effects of
+											increased complexity.</p>
+											<div class="image fit">
+												<img src="images/heirarchicalsummary.png" alt="hierarchical summary">
+											</div>
+									</div>
+									<div class="col-4 ">
+										<h2>Density Based</h2>
+										<p><h3>Algorithms Implemented:</h3>
+											DBSCAN, OPTICS, and Mean-Shift clustering.
+											<br> <br>
+											<h3>Key Results:</h3>
+											Mean-Shift accurately classifies
+											point cloud into keep and discard
+											and outperforms k-means on two
+											datasets.
+											Algorithms produce too many
+											clusters, despite good classification
+											results.
+											DBSCAN and OPTICS perform suboptimally.
+											Feature selection affects results.
+											Best classification results achieved
+											on raw dataset.
+										</p>
+										<div class="image fit">
+											<img src="images/densitysummary.png" alt="density summary">
+										</div>
+									</div>
+								</div>
+							</section>
 						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+
 					</section>
 
 			</div>
