@@ -6,125 +6,413 @@
 -->
 <html>
 	<head>
-		<title>Hierarchical-Based Clustering Algorithms</title>
+		<title>Hierarchical Clustering Algorithms</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+			user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="icon solid major fa-home"></a>
-				<nav>
-					<ul>
-						<li><a href="Overview.html">Overview</a></li>
-						<li><a href="pre-processing.html">Implementation</a></li>
-						<li><a href="Partitional.html">Partitional</a></li>
-						<li><a href="Density.html">Density-Based</a></li>
-						<li><a class="active" href="Hierarchical.html">Hierarchical-Based</a></li>
-						<li><a href="Results.html">Results</a></li>
-					</ul>
-				</nav>
-			</header>
+		<header id="header">
+			<a href="index.html" class="icon solid major fa-home"></a>
+			<nav>
+				<ul>
+					<li><a href="Overview.html">Overview</a></li>
+					<li><a href="pre-processing.html">Implementation</a></li>
+					<li><a href="Partitional.html">Partitional</a></li>
+					<li><a href="Density.html">Density-Based</a></li>
+					<li><a class="active" href="Hierarchical.html">Hierarchical</a></li>
+					<li><a href="Results.html">Results</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Main -->
-					<section id="overview" class="wrapper">
-						<div class="inner", style="text-align:center">
-							<h1 class="major">Hierarchical-Based Clustering Algorithms</h1>
-							<a href="https://github.com/jazzamazza/CHSEG/tree/jared-dev" target="_blank" class="icon brands fa-github"><span class=".label"> <br>Jared's Github <br></span></a>
-							<br>
-							<ul>
-								<li><a href="#overview"class="button">Overview</a>
-									<a href="#documents" class="button">Documents</a>
-								</li>
-							</ul>
+			<!-- Main -->
 
-							<p>Implement: Agglomerative, BIRCH,CURE clustering.
-								All algorithms match or exceed Kmeans in many clustering and
-								classification metrics.
-								CURE and Agglomerative show the
-								most promising results.
-								High time and space complexity.
-								Algorithms perform well with low
-								dimensionalities and down sampled
-								data. This reduces the effects of
-								increased complexity.</p>	
+			<section id="overview" class="wrapper">
+				<div class="inner" style="text-align:center">
+					<h1 class="major">Hierarchical Clustering Algorithms</h1>
+					<a href="https://github.com/jazzamazza/CHSEG/tree/jared-dev"
+						target="_blank" class="icon brands fa-github"><span class=".label"> <br>Jared's
+							Github <br></span></a>
+					<br>
+					
+						<ul class="actions special">
+							<li><a href="#abstract" class="button">Abstract</a></li>
+							<li><a href="#experiment" class="button">Experimental Aims</a></li>
+							<li><a href="#results" class="button">Results</a></li>
+							<li><a href="#plots" class="button">Plots</a></li>
+							<li><a href="#summary" class="button">Findings</a></li>
+							<li><a href="#documents" class="button">Documents</a></li>
+						</ul>
+					
+					
+					<hr>
+				</div>
+
+				<div class="inner" style="text-align:center">
+					<h2>Hierarchical Clustering</h2>
+					<hr>
+					<p>Hierarchical clustering algorithms include BIRCH, CURE, and
+						Agglomerative clustering. These clustering methods show promise in their
+						ability to cluster spatial data sets. Hierarchical clustering algorithms
+						build hierarchical clusters by merging (Agglomerative methods) or dividing
+						(Divisive methods) clusters successively. Hierarchical clustering
+						algorithms are known for producing good separation of clusters. This
+						hierarchy of clusters is represented as a tree or dendrogram. The root of
+						the tree is the unique cluster that gathers all the samples,
+						the leaves being the clusters with only one sample.
+					</p>
+				</div>
+
+			</section>
+
+			<section id="abstract" class="wrapper style3">
+				<div class="inner" style="text-align:center">
+					<h2>Abstract</h2>
+					<hr>
+					<p>The preservation of Cultural Heritage (CH) sites is vital in ensuring
+						the transmission of past human activity to future generations. The
+						3D point clouds obtained in the digital preservation of these sites
+						contain a wealth of information such as structural information, but
+						also erroneous data such as noise, people, scaffolding, and other
+						natural objects. The supervised labelling and cleaning of this data
+						is expensive in terms of time and labour.</p>
+
+					<p> <figure class="image left">
+							<img src="images/hierarchical/gtruth kmeans.png" alt="ground truth">
+							<figcaption> <em>Ground truth labels</em> </figcaption>
+						</figure>
+						This project explores the application of hierarchical clustering
+						methods to investigate the ability of these clustering methods to
+						produce semantically meaningful clusters on 3D point cloud data
+						of CH sites. Hierarchical clustering methods are compared against
+						a baseline of K-Means clustering. This project is experimental in
+						nature with algorithms being tested on multiple feature sets of
+						differing dimensionalities.
+						The results from the Hierarchical clustering algorithms produce
+						promising results in their ability to produce semantically meaningful
+						clusters.
+						These algorithms also perform as well if not better
+						than K-means clustering in multiple methods. These clustering methods and
+						their resulting clusters could
+						be used to improve tasks such as point cloud cleaning.</p>
+				</div>
+			</section>
+
+			<section id="experiment" class="wrapper style3-alt">
+				<div class="inner" style="text-align:center">
+					<h2>Experimental Aims</h2>
+					<hr>
+					<p>The central research question of the project is how well are
+						unsupervised hierarchical clustering algorithms able to produce
+						semantically meaningful clusters of 3D point cloud data on cultural
+						heritage sites. Semantically meaningful meaning clusters adhere to
+						groupings of data that are relevant and understandable spatially and
+						structurally in the 3D point cloud or which show promise in their
+						coverage and separation of the data set for binary classification
+						(keep/discard labelling) for use in applications such as 3D point
+						cloud cleaning.
+
+					</p>
+					<p>
+						Specifically, the main research question focuses
+						itself on how well popular hierarchical clustering methodologies -
+						BIRCH, CURE and Agglomerative Clustering - compare to k-means
+						clustering as a baseline and common clustering algorithms and each other
+						in terms of their ability to produce semantically meaningful
+						clusters. This is evaluated using their comparative performance in
+						cluster evaluation and binary classification metrics.
+					</p>
+
+					<p>Secondarily, we aim to determine if feature selection such as the
+						use of extracted geometric/covariance features, or very high dimensional
+						feature sets (such as those output by the Pointnet++ deep
+						neural network) improve the performance of hierarchical clustering
+						algorithms in producing semantically meaningful clusters.
+					</p>
+
+					<p>
+						Finally a tertiary point of interest is if the application of hierarchical
+						clustering algorithms could be viable as a means to improve
+						or augment the process of automated or semi-automated point
+						cloud cleaning.
+					</p>
+				</div>
+			</section>
+
+
+			<section id="results" class="wrapper style2">
+				<div class="inner" style="text-align:center">
+					<h2>Results</h2>
+					<hr>
+
+					<p>
+						<!-- <span class="image left">
+						<img src="images/hierarchical/clusters_aggl.png" alt="clusters agglomerative clustering">
+					</span> -->
+						<figure class="image left">
+							<img src="images/hierarchical/clusters_aggl.png" alt="clusters
+								agglomerative clustering">
+							<figcaption> <em>Agglomerative clustering k=500 - clusters</em>
+							</figcaption>
+						</figure>
+						Overall the clustering algorithms presented including K-means
+						can produce clusters that are semantically meaningful. This is supported
+						by the high results in unsupervised clustering metrics like the DB Index
+						and classification metrics like the F1, IoU, and Precision and Recall
+						scores.
+					</p>
+
+					<p>The results of the unsupervised hierarchical clustering algorithms show
+						that these algorithms provide good intra-cluster similarity while
+						providing good inter-cluster separation. CURE stood
+						out as a useful hierarchical clustering algorithm with the lowest
+						overall scores and good results on the DB index. It is also the most
+						similar across data sets. Overall the data set with the lowest DB
+						index offering the best performance on all algorithms except CURE
+						is the raw data set. This is a very important result because if one
+						can reduce the dimensionality of the input data while still providing
+						strong performance in these metrics it can reduce the need for
+						extra dimensions and improve the performance of the clustering
+						algorithms without losing performance.
+					</p>
+
+					<p>
+						Binary classification is a proxy for semantically meaningful clusters, as
+						the quality of the binary classification represents the similarity of the
+						clusters to the ground truth data. Hierarchical clustering
+						algorithms performed well here too with positive results. What
+						is promising is the performance of the raw and Geometric data
+						sets in these results with the results not being dominated by very
+						high dimension data sets like Pointnet++. Algorithms like agglomerative
+						clustering stood out as being able to score positive results
+						on the raw data and Geometric data set. Overall the hierarchical
+						algorithms performed well and with some outperforming K-means
+						in some metrics.
+					</p>
+
+					<p> <figure class="image right">
+							<img src="images/hierarchical/pred truth aggl.png" alt="pred truth">
+							<figcaption> <em>Agglomerative clustering k=500 - predicted labels</em>
+							</figcaption>
+						</figure>
+						The trends seen in the results of the hierarchical algorithms
+						show generally that increasing the number of clusters k results
+						in a positive improvement in the classification metrics. With the
+						intention to produce clusters that are meaningful and not just small
+						blobs of points it seems the k &lt 750 cut-off worked well to show
+						the best practical performance of these algorithms. In general the
+						range 300 &lt k &lt 550 is where one sees the best performance while
+						maintaining semantically meaningful clusters. The hierarchical algorithms
+						lend themselves nicely to optimisation and have clear ranges and
+						local maxima where performance could be maximised.
+
+					</p>
+				</div>
+			</section>
+
+			<section id="plots" class="wrapper style3">
+				<div class="inner" style="text-align:center">
+					<h2>Plots</h2>
+					<hr>
+					<div class="box align-center">
+						<h2 style="text-align:left">DB Index</h2>
+						<hr>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/kmeans_db.png" alt="kmeans db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/aggl_db.png" alt="agglomerative db index">
+							</span>
+
 						</div>
-					</section>
-
-					<section id="abstract" class="wrapper">
-						<div class="inner" style="text-align:center">
-							<p>The preservation of Cultural Heritage (CH) sites is vital in ensuring
-								the transmission of past human activity to future generations. The
-								3D point clouds obtained in the digital preservation of these sites
-								contain a wealth of information such as structural information, but
-								also erroneous data such as noise, people, scaffolding, and other
-								natural objects. The supervised labelling and cleaning of this data
-								is expensive in terms of time and labour.
-								This project explores the application of hierarchical clustering
-								methods to investigate the ability of these clustering methods to
-								produce semantically meaningful clusters on 3D point cloud data
-								of CH sites. Hierarchical clustering methods are compared against
-								a baseline of K-Means clustering. This project is experimental in
-								nature with algorithms being tested on multiple feature sets of
-								differing dimensionalities.
-								The results from the Hierarchical clustering algorithms produce
-								promising results in their ability to produce semantically meaningful clusters. These algorithms also perform as well if not better
-								than K-means clustering in multiple methods. These clusters could
-								be used to improve tasks such as point cloud cleaning.</p>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/cure_db.png" alt="agglomerative db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/birch_db.png" alt="agglomerative db
+									index">
+							</span>
 						</div>
-					</section>
-
-					<section id="documents", class="wrapper style2 fullscreen fade-up">
-						<div class="inner", style="text-align:center">
-							<h1>Documents</h1>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-paperclip"></span>
-									<h3>Literature Review</h3>
-									<p><em>Jared May</em><br>
-									Feature Extraction for Point Clouds</p>
-									<ul class="actions">
-										<li><a href="documents\MYXJAR002_Lit_Review.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon major fa-file-alt"></span>
-									<h3>Research Paper</h3>
-									<p><em>Jared May</em><br>
-										Semantically Meaningful Clustering of Cultural Heritage Point Cloud Data using Hierarchical Methods</p>
-									<ul class="actions">
-										<li><a href="documents\MYXJAR002_Thesis.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-							</div>
+					</div>
 
 
+					<div class="box align-center">
+						<h2 style="text-align:left">F1 and IoU Scores</h2>
+						<hr>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/kmeans_f1.png" alt="kmeans db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/kmeans_jaccard.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/aggl_f1.png" alt="kmeans db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/aggl_jaccard.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/cure_f1.png" alt="kmeans db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/cure_jaccard.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/birch_f1.png" alt="kmeans db index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/birch_jaccard.png" alt="kmeans db index">
+							</span>
+						</div>
+					</div>
 
-			</div>
+					<div class="box align-center">
+						<h2 style="text-align:left">Precision and Recall Scores</h2>
+						<hr>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/kmeans_precision.png" alt="kmeans db
+									index">
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/kmeans_recall.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/aggl_precision.png" alt="agglomerative db
+									index">
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1 fade-up">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; University of Cape Town. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/aggl_recall.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/cure_precision.png" alt="agglomerative db
+									index">
+
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/cure_recall.png" alt="kmeans db index">
+							</span>
+						</div>
+						<div class="row aln-center gtr-uniform col-6">
+							<span class="image fit left">
+								<img src="images/hierarchical/birch_precision.png" alt="agglomerative db
+									index">
+
+							</span>
+							<span class="image fit right">
+								<img src="images/hierarchical/birch_recall.png" alt="kmeans db index">
+							</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+			<section id="summary" class="wrapper">
+				<div class="inner" style="text-align:center">
+					<h2>Summary of Findings</h2>
+					<hr>
+
+					<p>Hierarchical clustering methods (namely: BIRCH, CURE, and Agglomerative)
+						can match or surpass the performance of K-means
+						clustering in some metrics. These methods can and have been
+						shown to produce semantically meaningful clusters on 3D point cloud data
+						of cultural heritage sites. These clusters can also perform
+						well in binary classification when classified according to their
+						overlap, with points labelled as keep or discard in a set of ground
+						truth labels. They show promise as theoretically being used as an
+						intermediate step in speeding up point cloud cleaning by clustering
+						on semantically meaningful structures that could form parts of keep
+						or discard labels.</p>
+
+					<h3 style="text-align:left">Notable findings</h3>
+
+					<ul style="text-align:left">
+						<li>CURE and Agglomerative show the
+							most promising results as algorithms that could be used in this domain.</li>
+						<li>
+							Generally Hierarchical algorithms have a high time and space complexity.
+							However, Algorithms perform well with low
+							dimensionalities and down sampled
+							data. Beneficially this reduces the negetive effects of
+							increased complexity.</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
-</html>
+			<section id="documents", class="wrapper style2 fullscreen fade-up">
+				<div class="inner", style="text-align:center">
+					<h1>Documents</h1>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-paperclip"></span>
+							<h3>Literature Review</h3>
+							<p><em>Jared May</em><br>
+								Feature Extraction for Point Clouds</p>
+							<ul class="actions">
+								<li><a href="documents\MYXJAR002_Lit_Review.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon major fa-file-alt"></span>
+							<h3>Research Paper</h3>
+							<p><em>Jared May</em><br>
+								Semantically Meaningful Clustering of Cultural Heritage Point Cloud Data
+								using Hierarchical Methods</p>
+							<ul class="actions">
+								<li><a href="documents\MYXJAR002_Thesis.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+					</div>
+
+
+
+				</div>
+
+				<!-- Footer -->
+				<footer id="footer" class="wrapper style1 fade-up">
+					<div class="inner">
+						<ul class="menu">
+							<li>&copy; University of Cape Town. All rights reserved.</li><li>Design:
+								<a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+			</body>
+		</html>

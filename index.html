@@ -8,329 +8,358 @@
 	<head>
 		<title>CHSEG | Semantic Segmentation of Cultural Heritage Sites</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+			user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#overview">Overview</a></li>
-							<li><a href="#two">Documents</a></li>
-							<li><a href="#three">Project Team</a></li>
-						</ul>
-					</nav>
+		<section id="sidebar">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="#intro">Welcome</a></li>
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#two">Documents</a></li>
+						<li><a href="#three">Project Team</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner", style="text-align:center">
+					<h1>CHSEG</h1>
+					<h2><em>Semantically Meaningful Clustering of Cultural Heritage Sites</em></h2>
+					<p>
+						<!-- CHSEG
+								<br> -->
+						UCT Honours Project
+						<br>
+						By Leah Gluckman, Jemma Sundelson, Jared May
+					</p>
+					<ul class="icon">
+						<a href="https://github.com/jazzamazza/CHSEG" target="_blank" class="icon
+							brands fa-github">
+							<span class=".label"> <br>CHSEG Github</span>
+						</a>
+					</ul>
+					<ul class="actions">
+						<li>
+							<a href="#overview" class="button scrolly">Overview</a>
+						</li>
+					</ul>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner", style="text-align:center">
-							<h1>CHSEG</h1>
-							<h2><em>Semantically Meaningful Clustering of Cultural Heritage Sites</em></h2>
+			<!-- Overview -->
+			<section id="overview" class="wrapper style2 spotlights">
+				<section id="projectoverview">
+					<div class="image">
+						<img src="images/pic01.PNG" alt="point cloud">
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h2>Overview</h2>
 							<p>
-								<!-- CHSEG
-								<br> -->
-								UCT Honours Project
-								<br>
-								By Leah Gluckman, Jemma Sundelson, Jared May
+								<strong>Constructing 3D models from laser scans of Cultural Heritage
+									(CH) sites is a vital but challenging
+									area of research for CH preservation. These scans produce point clouds
+									which can be visualised as 3D models.</strong>
 							</p>
-							<ul class="icon">
-								<a href="https://github.com/jazzamazza/CHSEG" target="_blank" class="icon brands fa-github">
-									<span class=".label"> <br>CHSEG Github</span>
-								</a>
-							</ul>
+							<p>
+								<strong>Vital:</strong>
+								<ul>
+									<li>Required to record and visualise the three-dimensional structure of
+										historical sites.</li>
+									<li>Can be used by preservationists to decipher where the CH site is
+										deteriorating and needs improvement.</li>
+									<li>Are a means of transmitting a testimony of past human activity to
+										future generations.</li>
+								</ul>
+							</p>
+							<p>
+								<strong>Challenging</strong>:
+								<ul>
+									<li>Laser scans of CH sites contain unwanted information, such as
+										foliage, people and scaffolding, that do not belong to the CH site and
+										which one must remove.</li>
+									<li>Removing this noisy data is called point cloud cleaning - a
+										predominantly manual, laborious and time-consuming task which must be
+										automated and made more efficient.</li>
+								</ul>
+							</p>
 							<ul class="actions">
-								<li>
-									<a href="#overview" class="button scrolly">Overview</a>
+								<li><a href="Overview.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section id="implementation">
+					<div class="image">
+						<img src="images/pic07.PNG" alt="point cloud">
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h2> Implementation </h2>
+							<p>
+								A detailed explanantion of our implementation can be found at the link
+								below.
+							</p>
+							<ul class="actions">
+								<li><a href="pre-processing.html" class="button">Learn more</a>
 								</li>
 							</ul>
 						</div>
-					</section>
-
-				<!-- Overview -->
-					<section id="overview" class="wrapper style2 spotlights">
-						<section id="projectoverview">
-							<div class="image">
-								<img src="images/pic01.PNG" alt="point cloud">
-							</div>
-							<div class="content">
-								<div class="inner">
-									<h2>Overview</h2>
-									<p>
-										<strong>Constructing 3D models from laser scans of Cultural Heritage (CH) sites is a vital but challenging 
-											area of research for CH preservation. These scans produce point clouds which can be visualised as 3D models.</strong>
-									</p>
-									<p>
-										<strong>Vital:</strong>
-										<ul>
-											<li>Required to record and visualise the three-dimensional structure of historical sites.</li>
-											<li>Can be used by preservationists to decipher where the CH site is deteriorating and needs improvement.</li>
-											<li>Are a means of transmitting a testimony of past human activity to future generations.</li>
-										</ul>
-									</p>
-									<p>
-										<strong>Challenging</strong>:
-										<ul>
-											<li>Laser scans of CH sites contain unwanted information, such as foliage, people and scaffolding, that do not belong to the CH site and which one must remove.</li>
-											<li>Removing this noisy data is called point cloud cleaning - a predominantly manual, laborious and time-consuming task which must be automated and made more efficient.</li>
-										</ul>
-									</p>
-									<ul class="actions">
-										<li><a href="Overview.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section id="implementation">
-							<div class="image">
-								<img src="images/pic07.PNG" alt="point cloud">
-							</div>
-							<div class="content">
-								<div class="inner">
-									<h2> Implementation </h2>
-									<p>
-										A detailed explanantion of our implementation can be found at the link below.
-									</p>
-										<ul class="actions">
-										<li><a href="pre-processing.html" class="button">Learn more</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section id="clustering">
-							<div class="image">
-								<img src="images/pic02.PNG" alt="point cloud">
-							</div>
-							<div class="content">
-								<div class="inner">
-									<h2>Clustering</h2>
-									<p>
-										<b>Clustering partitions a dataset into homogenous subgroups called clusters, such that each comprises similar points.</b>
-									</p>
-									<p>
-										<b>Goals:</b>
-										<ul>
-											<li>Maximise inter-cluster similarity</li>
-											<li>Minimise intra-cluster similarity</li>
-										</ul>
-										<b>Each sub-project explores three algorithms from a different class of clustering algorithms, and uses the k-means clustering algorithm as a baseline for comparison.</b>
-									</p>
-										<ul class="actions stacked">
-										<li><a href="Partitional.html" class="button">Partitional</a></li>
-										<li><a href="Density.html" class="button">Density-Based</a></li>
-										<li><a href="Hierarchical.html" class="button">Hierarchical-Based</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section id="results">
-							<div class="image">
-								<img src="images/pic04.PNG" alt="point cloud">
-							</div>
-							<div class="content">
-								<div class="inner">
-									<h2>Results</h2>
-									<p>
-										<b>Clustering algorithms can:</b>
-										<ul>
-											<li>Augment the process of point cloud cleaning by automating it and improving its efficiency. The algorithms can, therefore, reduce the need for manual and labour-intensive cleaning.</li>
-											<li>Classify CH point clouds into keep and discard clusters. However, they may not be a viable solution to point cloud cleaning because they produce numerous partitions rather than one for each classification label.</li>
-										</ul>	
-										<b>Other conclusions:</b>	
-										<ul>
-											<li>Feature set dimensionality and selection affects clustering algorithms' performance.</li>
-											<li>The cluster validity metrics are insufficient for representing the usefulness of the produced clusters. Thus, selecting the optimal algorithm is complex.</li>
-											<li>Gaussian Mixture Model and Mean-Shift that, when joined for classification, resemble the actual ground truth labels.</li>
-										</ul>	
-									</p>
-									<ul class="actions">
-										<li><a href="Results.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Documents</h2>
-							<p>View and download documents related to the research</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-bookmark"></span>
-									<h3>Proposal</h3>
-									<p><em>Leah Gluckman, Jemma Sundelson, Jared May</em><br>
-									Semantically Meaningful Clustering of Cultural Heritage Sites</p>
-									<ul class="actions">
-										<li><a href="documents\CHSEG_Proposal.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-image"></span>
-									<h3>Poster</h3>
-									<p><em>Leah Gluckman, Jemma Sundelson, Jared May</em><br>
-									Semantically Meaningful Clustering of Cultural Heritage Sites</p>
-									<ul class="actions">
-										<li><a href="documents\CHSEG_Poster.pdf" target="_blank" class="button">Download Poster</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-paperclip"></span>
-									<h3>Literature Review</h3>
-									<p><em>Leah Gluckman</em><br>
-									Classification of Point Clouds</p>
-									<ul class="actions">
-										<li><a href="documents\GLCLEA001_Lit_Review.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon major fa-file-alt"></span>
-									<h3>Research Paper</h3>
-									<p><em>Leah Gluckman</em><br>
-									Semantically Meaningful Density-Based Clustering of Cultural Heritage Sites</p>
-									<ul class="actions">
-										<li><a href="documents\GLCLEA001_Thesis.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-paperclip"></span>
-									<h3>Literature Review</h3>
-									<p><em>Jemma Sundelson</em><br>
-									General Clustering Survey</p>
-									<ul class="actions">
-										<li><a href="documents\SNDJEM001_Lit_Review.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon major fa-file-alt"></span>
-									<h3>Research Paper</h3>
-									<p><em>Jemma Sundelson</em><br>
-									Machine learning for semantic segmentation of Cultural Heritage Sites </p>
-									<ul class="actions">
-										<li><a href="documents\SNDJEM001_Thesis.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-paperclip"></span>
-									<h3>Literature Review</h3>
-									<p><em>Jared May</em><br>
-									Feature Extraction for Point Clouds</p>
-									<ul class="actions">
-										<li><a href="documents\MYXJAR002_Lit_Review.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon major fa-file-alt"></span>
-									<h3>Research Paper</h3>
-									<p><em>Jared May</em><br>
-										Semantically Meaningful Clustering of Cultural Heritage Point Cloud Data using Hierarchical Methods</p>
-									<ul class="actions">
-										<li><a href="documents\MYXJAR002_Thesis.pdf" target="_blank" class="button">Download Paper</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-
-				<!-- Three -->
-				<section id="three" class="wrapper style1 fade-up">
-					<div class="inner">
-					  <h2>Project Team</h2>
-					  <div class="split style1">
-						<section>
-						  <form>
-							<div class="fields">
-							  <div class="field half">
-								<span class="icon fa-user">&nbsp;&nbsp;Leah Gluckman</span>
-								<br />
-								<span class="icon fa-user">&nbsp;&nbsp;Jemma Sundelson</span>
-								<br />
-								<span class="icon fa-user">&nbsp;&nbsp;Jared May</span>
-							  </div>
-							  <div class="field half">
-								<a
-								  href="mailto:glclea001@myuct.ac.za"
-								  class="icon fa-envelope"
-								  ><span>&nbsp;&nbsp;glclea001@myuct.ac.za</span></a
-								>
-								<br />
-								<a
-								  href="mailto:sndjem001@myuct.ac.za"
-								  class="icon fa-envelope"
-								  ><span>&nbsp;&nbsp;sndjem001@myuct.ac.za</span></a
-								>
-								<br />
-								<a
-								  href="mailto:myxjar002@myuct.ac.za"
-								  class="icon fa-envelope"
-								  ><span>&nbsp;&nbsp;myxjar002@myuct.ac.za</span></a
-								>
-							  </div>
-							  <div class="field">
-								<label for="name">Supervisors</label>
-								Associate Professor Patrick Marais <br />
-								Luc Hayward
-							  </div>
-							</div>
-						  </form>
-						</section>
-						<section>
-						  <ul class="contact">
-							<li>
-							  <h3>Institution</h3>
-							  <span>
-								University of Cape Town
-								<br>
-								School of Information Technology
-								<br>
-								Department of Computer Science
-								<br>
-								<a href="http://www.cs.uct.ac.za">cs.uct.ac.za</a>
-								<br>
-								<a href="mailto:dept@cs.uct.ac.za">dept@cs.uct.ac.za</a>
-								<br>
-								<a href="http://www.sit.uct.ac.za/">sit.uct.ac.za</a>
-							  </span>
-							</li>
-						  </ul>
-						</section>
-					  </div>
 					</div>
-				  </section>
+				</section>
+
+				<section id="clustering">
+					<div class="image">
+						<img src="images/pic02.PNG" alt="point cloud">
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h2>Clustering</h2>
+							<p>
+								<b>Clustering partitions a dataset into homogenous subgroups called
+									clusters, such that each comprises similar points.</b>
+							</p>
+							<p>
+								<b>Goals:</b>
+								<ul>
+									<li>Maximise inter-cluster similarity</li>
+									<li>Minimise intra-cluster similarity</li>
+								</ul>
+								<b>Each sub-project explores three algorithms from a different class of
+									clustering algorithms, and uses the k-means clustering algorithm as a
+									baseline for comparison.</b>
+							</p>
+							<ul class="actions stacked">
+								<li><a href="Partitional.html" class="button">Partitional</a></li>
+								<li><a href="Density.html" class="button">Density-Based</a></li>
+								<li><a href="Hierarchical.html" class="button">Hierarchical-Based</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section id="results">
+					<div class="image">
+						<img src="images/pic04.PNG" alt="point cloud">
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h2>Results</h2>
+							<p>
+								<b>Clustering algorithms can:</b>
+								<ul>
+									<li>Augment the process of point cloud cleaning by automating it and
+										improving its efficiency. The algorithms can, therefore, reduce the
+										need for manual and labour-intensive cleaning.</li>
+									<li>Classify CH point clouds into keep and discard clusters. However,
+										they may not be a viable solution to point cloud cleaning because they
+										produce numerous partitions rather than one for each classification
+										label.</li>
+								</ul>
+								<b>Other conclusions:</b>
+								<ul>
+									<li>Feature set dimensionality and selection affects clustering
+										algorithms' performance.</li>
+									<li>The cluster validity metrics are insufficient for representing the
+										usefulness of the produced clusters. Thus, selecting the optimal
+										algorithm is complex.</li>
+									<li>Gaussian Mixture Model and Mean-Shift that, when joined for
+										classification, resemble the actual ground truth labels.</li>
+								</ul>
+							</p>
+							<ul class="actions">
+								<li><a href="Results.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper style3 fade-up">
+				<div class="inner">
+					<h2>Documents</h2>
+					<p>View and download documents related to the research</p>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-bookmark"></span>
+							<h3>Proposal</h3>
+							<p><em>Leah Gluckman, Jemma Sundelson, Jared May</em><br>
+								Semantically Meaningful Clustering of Cultural Heritage Sites</p>
+							<ul class="actions">
+								<li><a href="documents\CHSEG_Proposal.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon solid major fa-image"></span>
+							<h3>Poster</h3>
+							<p><em>Leah Gluckman, Jemma Sundelson, Jared May</em><br>
+								Semantically Meaningful Clustering of Cultural Heritage Sites</p>
+							<ul class="actions">
+								<li><a href="documents\CHSEG_Poster.pdf" target="_blank" class="button">Download
+										Poster</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon solid major fa-paperclip"></span>
+							<h3>Literature Review</h3>
+							<p><em>Leah Gluckman</em><br>
+								Classification of Point Clouds</p>
+							<ul class="actions">
+								<li><a href="documents\GLCLEA001_Lit_Review.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon major fa-file-alt"></span>
+							<h3>Research Paper</h3>
+							<p><em>Leah Gluckman</em><br>
+								Semantically Meaningful Density-Based Clustering of Cultural Heritage
+								Sites</p>
+							<ul class="actions">
+								<li><a href="documents\GLCLEA001_Thesis.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon solid major fa-paperclip"></span>
+							<h3>Literature Review</h3>
+							<p><em>Jemma Sundelson</em><br>
+								General Clustering Survey</p>
+							<ul class="actions">
+								<li><a href="documents\SNDJEM001_Lit_Review.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon major fa-file-alt"></span>
+							<h3>Research Paper</h3>
+							<p><em>Jemma Sundelson</em><br>
+								Machine learning for semantic segmentation of Cultural Heritage Sites
+							</p>
+							<ul class="actions">
+								<li><a href="documents\SNDJEM001_Thesis.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon solid major fa-paperclip"></span>
+							<h3>Literature Review</h3>
+							<p><em>Jared May</em><br>
+								Feature Extraction for Point Clouds</p>
+							<ul class="actions">
+								<li><a href="documents\MYXJAR002_Lit_Review.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+						<section>
+							<span class="icon major fa-file-alt"></span>
+							<h3>Research Paper</h3>
+							<p><em>Jared May</em><br>
+								Semantically Meaningful Clustering of Cultural Heritage Point Cloud Data
+								using Hierarchical Methods</p>
+							<ul class="actions">
+								<li><a href="documents\MYXJAR002_Thesis.pdf" target="_blank"
+										class="button">Download Paper</a></li>
+							</ul>
+						</section>
+					</div>
 				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Project Team</h2>
+					<div class="split style1">
+						<section>
+							<form>
+								<div class="fields">
+									<div class="field half">
+										<span class="icon fa-user">&nbsp;&nbsp;Leah Gluckman</span>
+										<br />
+										<span class="icon fa-user">&nbsp;&nbsp;Jemma Sundelson</span>
+										<br />
+										<span class="icon fa-user">&nbsp;&nbsp;Jared May</span>
+									</div>
+									<div class="field half">
+										<a
+											href="mailto:glclea001@myuct.ac.za"
+											class="icon fa-envelope"><span>&nbsp;&nbsp;glclea001@myuct.ac.za</span></a>
+										<br />
+										<a
+											href="mailto:sndjem001@myuct.ac.za"
+											class="icon fa-envelope"><span>&nbsp;&nbsp;sndjem001@myuct.ac.za</span></a>
+										<br />
+										<a
+											href="mailto:myxjar002@myuct.ac.za"
+											class="icon fa-envelope"><span>&nbsp;&nbsp;myxjar002@myuct.ac.za</span></a>
+									</div>
+									<div class="field">
+										<label for="name">Supervisors</label>
+										Associate Professor Patrick Marais <br />
+										Luc Hayward
+									</div>
+								</div>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Institution</h3>
+									<span>
+										University of Cape Town
+										<br>
+										School of Information Technology
+										<br>
+										Department of Computer Science
+										<br>
+										<a href="http://www.cs.uct.ac.za">cs.uct.ac.za</a>
+										<br>
+										<a href="mailto:dept@cs.uct.ac.za">dept@cs.uct.ac.za</a>
+										<br>
+										<a href="http://www.sit.uct.ac.za/">sit.uct.ac.za</a>
+									</span>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
 				<ul class="menu">
 					<li>&copy; University of Cape Town. All rights reserved.</li>
 					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-				</div>
-			</footer>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
